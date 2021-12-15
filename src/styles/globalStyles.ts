@@ -10,6 +10,20 @@ const GlobalStyle = createGlobalStyle`
   body {
       background-color: ${({ theme }) => theme.colors.background};
   }
+  input, button, textarea, select{
+    font-family: 'Roboto', sans-serif;
+  }
+  input:focus, textarea:focus, select:focus{
+    outline: none;
+  }
+  a{
+    text-decoration: none;
+    color: ${({theme}) => theme.colors.primary};
+
+    &:hover{
+      filter: opacity(0.8);
+    }
+  }
 `;
 
 export default GlobalStyle;
