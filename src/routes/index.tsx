@@ -1,3 +1,5 @@
+//React-router-dom = basicamente, valida a url e encaminha/renderiza para o elemento
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
