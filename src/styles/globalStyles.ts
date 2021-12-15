@@ -4,11 +4,13 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   * {
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
   }
   body {
-      background-color: ${({ theme }) => theme.colors.background};
+    font-family: 'Roboto', sans-serif;  
+    background-color: ${({ theme }) => theme.colors.background};
   }
   input, button, textarea, select{
     font-family: 'Roboto', sans-serif;
@@ -18,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a{
     text-decoration: none;
-    color: ${({theme}) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
 
     &:hover{
       filter: opacity(0.8);

@@ -1,7 +1,21 @@
-import React from "react";
+import {
+  DashboardBackground,
+  BodyContainer,
+  InlineTitle,
+  InlineContainer,
+} from "./styles";
+
+import Header from "../../components/Header";
 
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <DashboardBackground>
+      <Header />
+      <BodyContainer>
+        
+      </BodyContainer>
+    </DashboardBackground>
+  );
 };
 
 export default Dashboard;
