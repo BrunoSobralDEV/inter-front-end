@@ -1,29 +1,31 @@
-import { HeaderContainer, HeaderWrapper, UserInfo } from "./styles";
+import {HeaderContainer, HeaderWrapper, UserInfo} from './styles';
+import UserCircle from '../UserCircle';
+import useAuth from '../../hooks/useAuth';
 
 import logoInter from '../../assets/images/Inter-orange.png';
+import { useNavigate } from 'react-router-dom';
 
-import UserCircle from "../UserCircle";
-
-import { useNavigate, Link } from "react-router-dom";
 
 const Header = () => {
+    const {user} = useAuth()
     const navigate = useNavigate();
 
-    const handleLogoff = () =>{
-        navigate('/')
-    }
+    const initials = user.firstName.substr(0,1)+user.lastName.substr(0,1)
 
-    return(
+    const handleLogoff = () => {
+        navigate('/signin')
+    };
+    return (
         <HeaderContainer>
             <HeaderWrapper>
-                <img src={logoInter} width={172} height={61} alt="logo inter" />
+                   <img src={logoInter} width={172} height={61} alt="logo inter" />
                 <UserInfo>
-                    <UserCircle initials="BS"/>
-                    <div>
-                        <p>Olá. <span className="primary-color font-bold">Bruno Sobral</span></p>
-                        <strong>22201651-10</strong><br />
-                        <a href="" onClick={handleLogoff}>Logout</a>
-                    </div>
+                  <UserCircle initials={initials} />
+                  <div>
+                      <p>Olá bem-vinde, <span className="primary-color font-bold">{user.firstName} {user.lastName}</span></p>
+                      <strong>{user.accountNumber}-{user.accountDigit}</strong><br/>
+                      <a href="#" onClick={handleLogoff}>Sair</a>
+                  </div>
                 </UserInfo>
             </HeaderWrapper>
         </HeaderContainer>
